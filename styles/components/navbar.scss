@@ -1,0 +1,70 @@
+.Navbar {
+  position: relative;
+  height: 13vh;
+  background-color: #000;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  padding: 0 3.5rem;
+  position: relative;
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 0.1rem;
+  text-transform: uppercase;
+  border-bottom: 1px solid #333;
+
+  .Navbar__logo {
+    filter: invert(1);
+    cursor: pointer;
+  }
+
+  .Navbar__menu {
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    @media screen and (max-width: 990px) {
+      display: none;
+    }
+  }
+
+  .Navbar__right {
+    display: flex;
+
+    ul {
+      display: flex;
+      color: #aaa;
+      @media screen and (max-width: 990px) {
+        display: none;
+      }
+      li:hover {
+        color: #fff;
+       
+      }
+    }
+    &-cart-icon {
+      font-size: 1rem;
+      color: #fff;
+      cursor: pointer;
+      position: relative;
+      transition: transform 0.4s ease;
+      border: none;
+      background-color: transparent;
+    }
+    &-cart-item-quantity {
+      color: #fff;
+      font-size: 1rem;
+    }
+  }
+  .menu-icon {
+    margin-left: 0.5rem;
+    font-size: 1.5rem;
+    display: none;
+    cursor: pointer;
+    @media screen and (max-width: 990px) {
+      display: block;
+    }
+  }
+}
