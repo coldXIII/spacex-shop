@@ -1,0 +1,18 @@
+.MayLike {
+  min-height: 50vh;
+  display: flex;
+  gap: 1rem;
+  padding: 1rem;
+  overflow-x: auto;
+  text-align: center;
+
+  .item {
+    width: 30vw;
+    height: 30vw;
+    cursor: pointer;
+    img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+}

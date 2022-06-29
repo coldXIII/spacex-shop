@@ -4,7 +4,10 @@ import { Product, FooterBanner, HeroBanner } from '../components';
 import Button from '../components/Button/Button';
 
 const Home = ({ products, footerBannerData }) => {
-  const onlyTwo = products.slice(0, 2);
+  const firstProduct = products[0]
+  const secondProduct = products[3]
+  const mainProducts = new Array(firstProduct,secondProduct)
+
   return (
     <>
       <HeroBanner />
@@ -12,7 +15,7 @@ const Home = ({ products, footerBannerData }) => {
         <h2>Featured Products</h2>
       </div>
       <div className="products-container">
-        {onlyTwo?.map((product) => (
+        {mainProducts.map((product,index) => (
           <Product key={product._id} product={product} />
         ))}
       </div>

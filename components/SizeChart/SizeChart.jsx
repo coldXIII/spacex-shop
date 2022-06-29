@@ -1,7 +1,7 @@
 import React, { useMemo } from 'react';
 import { useTable } from 'react-table';
-import { tableData } from './table/tableData';
-import { COLUMNS } from './table/columns';
+import { tableData } from '../../lib/table/tableData';
+import { COLUMNS } from '../../lib/table/columns';
 import styles from './sizechart.module.scss'
 
 const SizeChart = () => {
