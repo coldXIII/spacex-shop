@@ -1,0 +1,36 @@
+.Navmenu {
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  text-transform: uppercase;
+  .link {
+    position: relative;
+  }
+}
+
+
+.Dropdown {
+  display: flex;
+  position: absolute;
+  top: 3.1rem;
+  left: 0;
+  width: 12rem;
+  padding: 0.5rem 1rem;
+  justify-content: center;
+  align-items: flex-start;
+  text-transform: capitalize;
+  flex-direction: column;
+  border: 1px solid #fff3;
+  border-top: 2px solid #fff;
+  background-color: #000;
+  li {
+    margin: 1rem 0;
+    font-size: 1rem;
+    font-weight: 300;
+  }
+}
+.DropdownHidden {
+  display: none;
+
+}

@@ -1,0 +1,20 @@
+.Product {
+  text-align: center;
+  font-size: 1rem;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: transform 0.5s ease;
+
+  .image {
+    background-color: #ebebeb;
+    transform: scale(1, 1);
+    transition: transform 0.5s ease;
+  }
+  .name {
+    font-weight: 600;
+  }
+  .price {
+    font-weight: 600;
+    margin-top: 0.5rem;
+  }
+}

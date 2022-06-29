@@ -1,38 +1,33 @@
-import React, { useState } from 'react';
-import { AiOutlineMinus, AiOutlinePlus, AiOutlineRight } from 'react-icons/ai';
-
+import React from 'react';
 import { client, urlFor } from '../../lib/client';
 import { useStateContext } from '../../context/StateContext';
+import { AiOutlineMinus, AiOutlinePlus, AiOutlineRight } from 'react-icons/ai';
+import styles from './slug.module.scss';
 
 const ProductDetails = ({ product, products }) => {
   const { image, name, details, price } = product;
-  const { decQty, incQty, qty, onAdd, setShowCart } = useStateContext();
+  const { decQty, incQty, qty, onAdd } = useStateContext();
 
   return (
     <div>
-      <div className="ProductDetails__container">
+      <div className={styles.ProductDetails}>
         <div>
-          <div className="ProductDetails__image-container">
-            <img
-              src={urlFor(image && image[0])}
-              className="ProductDetails__image"
-            />
-          </div>
+          <img src={urlFor(image && image[0])} className={styles.image} />
         </div>
 
-        <div className="ProductDetails__desc">
+        <div className={styles.description}>
           <h1>{name}</h1>
-          <p className="price">${price}.00</p>
-          <span className="details">
+          <p className={styles.price}>${price}.00</p>
+          <span className={styles.details}>
             <b>Infant:</b> <br /> {details[0]}
           </span>
           <br />
           <br />
-          <span className="details">
+          <span className={styles.details}>
             <b>Toddler:</b> <br /> {details[1]}
           </span>
 
-          <div className="ProductDetails__desc-selects">
+          <div className={styles.selects}>
             <select name="color">
               <option>Colour: White</option>
               <option>Colour: Black</option>
@@ -45,28 +40,28 @@ const ProductDetails = ({ product, products }) => {
             </select>
           </div>
 
-          <div className="ProductDetails__desc-quantity">
-            <div className="ProductDetails__desc-quantity--buttons">
-              <button className="minus" onClick={decQty}>
+          <div className={styles.quantity}>
+            <div className={styles.buttons}>
+              <button className={styles.minus} onClick={decQty}>
                 <AiOutlineMinus />
               </button>
-              <span className="num">{qty}</span>
-              <button className="plus" onClick={incQty}>
+              <span className={styles.num}>{qty}</span>
+              <button className={styles.plus} onClick={incQty}>
                 <AiOutlinePlus />
               </button>
             </div>
           </div>
 
-          <div className="ProductDetails__desc-buttons">
+          <div className={styles.buttons}>
             <button
               type="button"
-              className="add-to-cart"
+              className={styles.addtocart}
               onClick={() => onAdd(product, qty)}
             >
               <span> Add to Cart</span>
             </button>
           </div>
-          <span className="more-info">
+          <span className={styles.moreinfo}>
             more information <AiOutlineRight />
           </span>
         </div>

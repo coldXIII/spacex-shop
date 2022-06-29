@@ -1,13 +1,13 @@
 import React from 'react';
 import { client } from '../lib/client';
-import { Product, FooterBanner, Hero } from '../components';
-import Button from '../components/Button';
+import { Product, FooterBanner, HeroBanner } from '../components';
+import Button from '../components/Button/Button';
 
 const Home = ({ products, footerBannerData }) => {
   const onlyTwo = products.slice(0, 2);
   return (
     <>
-      <Hero />
+      <HeroBanner />
       <div className="products-heading">
         <h2>Featured Products</h2>
       </div>

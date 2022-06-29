@@ -1,0 +1,17 @@
+.EmptyCart {
+    color: #000;
+    margin: 40px;
+    text-align: center;
+    h3 {
+      font-weight: 600;
+      font-size: 1.5rem;
+    }
+    .button {
+      display: block;
+      width: 50%;
+      margin: 3rem auto 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
