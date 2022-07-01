@@ -6,19 +6,25 @@ import SizeChart from '../../components/SizeChart/SizeChart';
 import SlugDescription from '../../components/SlugDescription/SlugDescription';
 import { AiOutlineMinus, AiOutlinePlus } from 'react-icons/ai';
 import MayLike from '../../components/MayLike/MayLike';
+import LightBox from '../../components/LightBox/LightBox';
 
 const ProductDetails = ({ product, products }) => {
   const { image, sizeChart } = product;
   const [showTable, setShowTable] = useState(false);
+  const [lightBox, setLightBox] = useState(false);
   const toggleTable = () => {
     setShowTable(!showTable);
   };
+  console.log(lightBox);
 
   return (
     <>
       <div className={styles.ProductDetails}>
         <div>
-          <SlugSlider image={image} />
+          <SlugSlider image={image} setLightBox={setLightBox} />
+          {lightBox && (
+            <LightBox lightBox={lightBox} image={image} onClose={() => setLightBox(false)} />
+          )}
           {sizeChart && (
             <div className={styles.table}>
               <div className={styles.tableheader}>
