@@ -1,45 +1,18 @@
-import React, { useMemo } from 'react';
-import { useTable } from 'react-table';
-import { tableData } from '../../lib/table/tableData';
-import { COLUMNS } from '../../lib/table/columns';
-import styles from './sizechart.module.scss'
+import React from 'react';
+import styles from './sizechart.module.scss';
 
-const SizeChart = () => {
-  const columns = useMemo(() => COLUMNS, []);
-  const data = useMemo(() => tableData, []);
-
-  const tableInstance = useTable({
-    columns,
-    data,
-  });
-
-  const { getTableProps, getTableBodyProps, headerGroups, rows, prepareRow } =
-    tableInstance;
+const SizeChart = ({ sizeChart: { rows } }) => {
 
   return (
-    <table className={styles.table} {...getTableProps()}>
-      <thead>
-        {headerGroups.map((headerGroup) => (
-          <tr {...headerGroup.getHeaderGroupProps()}>
-            {headerGroup.headers.map((column) => (
-              <th {...column.getHeaderProps()}>{column.render('Header')}</th>
-            ))}
-          </tr>
-        ))}
-      </thead>
-      <tbody {...getTableBodyProps()}>
-        {rows.map((row) => {
-          prepareRow(row);
-          return (
-            <tr {...row.getRowProps()}>
-              {row.cells.map((cell) => {
-                return <td {...cell.getCellProps()}>{cell.render('Cell')}</td>;
-              })}
-            </tr>
-          );
-        })}
-      </tbody>
-    </table>
+    <div className={styles.SizeChart}>
+      {rows.map((item, index) => (
+        <div className={styles.row} key={index}>
+          {item.cells.map((cell, index) => (
+            <span key={index}>{cell}</span>
+          ))}
+        </div>
+      ))}
+    </div>
   );
 };
 

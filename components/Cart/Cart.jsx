@@ -31,13 +31,12 @@ const Cart = () => {
     if (response.statusCode === 500) return;
 
     const data = await response.json();
-    console.log(data);
+  
 
     toast.loading('Redirecting...');
 
     stripe.redirectToCheckout({ sessionId: data.id });
   };
-
   return (
     <div className={styles.Cart} ref={cartRef}>
       <div className={styles.container}>

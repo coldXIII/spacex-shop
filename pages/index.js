@@ -4,9 +4,7 @@ import { Product, FooterBanner, HeroBanner } from '../components';
 import Button from '../components/Button/Button';
 
 const Home = ({ products, footerBannerData }) => {
-  const firstProduct = products[0]
-  const secondProduct = products[3]
-  const mainProducts = new Array(firstProduct,secondProduct)
+  const mainProducts = new Array(products[0],products[3])
 
   return (
     <>

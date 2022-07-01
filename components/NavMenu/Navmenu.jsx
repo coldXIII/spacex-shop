@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import styles from './navmenu.module.scss'
+import React, { useState, useEffect } from 'react';
+import styles from './navmenu.module.scss';
 
 const Navmenu = ({ data }) => {
   const [toggleState, setToggleState] = useState(null);
@@ -9,26 +9,29 @@ const Navmenu = ({ data }) => {
       setToggleState(null);
     }, 3000);
   };
+ 
 
   return (
-      <ul className={styles.Navmenu}>
-        {data.map((item, index) => (
-          <li
-            className={styles.link}
-            key={index + item.title}
-            onMouseEnter={() => toggleDropdown(index)}
+    <ul className={styles.Navmenu}>
+      {data.map((item, index) => (
+        <li
+          className={styles.link}
+          key={index + item.title}
+          onClick={() => toggleDropdown(index)}
+        >
+          {item.title}
+          <ul
+            className={
+              toggleState === index ? styles.Dropdown : styles.DropdownHidden
+            }
           >
-            {item.title}
-            <ul
-              className={toggleState === index ? styles.Dropdown : styles.DropdownHidden}
-            >
-              {item.links.map((link, index) => (
-                <li key={index + link}>{link}</li>
-              ))}
-            </ul>
-          </li>
-        ))}
-      </ul>
+            {item.links.map((link, index) => (
+              <li key={index + link}>{link}</li>
+            ))}
+          </ul>
+        </li>
+      ))}
+    </ul>
   );
 };
 

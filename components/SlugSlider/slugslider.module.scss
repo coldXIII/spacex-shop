@@ -1,6 +1,9 @@
 .swiper {
     width: 50vw;
     height: 40vw;
+    @media screen and (max-width: 800px) {
+      width: 80vw;
+    }
   }
   
   .slide {
@@ -23,10 +26,10 @@
     cursor: pointer;
     transition: 0.3s ease-in-out;
 
-    @media screen and (max-width: 800px) {
-      width: 450px;
-      height: 450px;
-    }
+    // @media screen and (max-width: 500px) {
+    //   width: 60vw;
+    //   height: 60vw;
+    // }
   }
   .swiper-pagination-bullet {
     width: 8px;

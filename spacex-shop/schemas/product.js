@@ -37,5 +37,10 @@ export default {
       type: 'array',
       of: [{ type: 'string' }],
     },
+    {
+      name: 'sizeChart',
+      title: 'Size Chart',
+      type: 'table', // Specify 'table' type
+    },
   ],
 };

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { urlFor } from '../../lib/client';
 import Link from 'next/link';
-import styles from './product.module.scss'
+import styles from './product.module.scss';
 
 const Product = ({ product: { image, name, slug, price } }) => {
   const [turned, setTurned] = useState(false);

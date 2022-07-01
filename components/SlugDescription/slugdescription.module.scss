@@ -1,8 +1,9 @@
-
   .SlugDescription {
-    // margin-left: 1.2rem;
     width: 35vw;
     text-align: left;
+    @media screen and (max-width: 800px) {
+      width: 80vw;
+    }
     h1 {
       font-size: 1.5rem;
       font-weight: 600;

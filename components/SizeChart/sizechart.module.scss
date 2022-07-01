@@ -1,18 +1,33 @@
-.table {
-  border-collapse: collapse;
+.SizeChart {
+  width: 50vw;
+  @media screen and (max-width: 800px) {
+    width: 80vw;
+  }
+  @media screen and (max-width: 400px) {
+    width: 90vw;
+  }
+}
+
+.row {
   width: 100%;
+  display: grid;
+  grid-template-columns: 3fr repeat(7, 1fr);
+  gap: 1rem;
   font-size: 0.9rem;
   color: #5c5c5c;
   text-align: left;
-}
-
-.table td,
-.table th {
   border-bottom: 1px solid #ddd;
-  padding: 1rem;
-}
-
-.table th {
-  padding: 1rem;
-  font-weight: 400;
+  @media screen and (max-width: 800px) {
+    font-size: 0.8rem;
+  }
+  @media screen and (max-width: 400px) {
+    font-size: 0.7rem;
+    margin-bottom: 0.5rem;
+  }
+  span {
+    padding: 1rem 0;
+    @media screen and (max-width: 400px) {
+      padding: 0.5rem 0;
+    }
+  }
 }

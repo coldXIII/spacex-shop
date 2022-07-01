@@ -4,21 +4,15 @@ import { useStateContext } from '../../context/StateContext';
 import { AiOutlineMinus, AiOutlinePlus, AiOutlineRight } from 'react-icons/ai';
 
 const SlugDescription = ({ product }) => {
-  const { name, details, price } = product;
+  const { name, details, price, } = product;
   const { decQty, incQty, qty, onAdd } = useStateContext();
   return (
     <div className={styles.SlugDescription}>
       <h1>{name}</h1>
       <p className={styles.price}>${price}.00</p>
       {details.map((item, index) => (
-        <p className={styles.details}>{item}</p>
+        <p className={styles.details} key={index}>{item}</p>
       ))}
-
-      {/* <br />
-      <br />
-      <span className={styles.details}>
-        <b>Toddler:</b> <br /> {details[1]}
-      </span> */}
 
       <div className={styles.selects}>
         <select name="color">

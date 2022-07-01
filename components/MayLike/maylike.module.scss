@@ -5,11 +5,27 @@
   padding: 1rem;
   overflow-x: auto;
   text-align: center;
+@media screen and (max-width:400px) {
+  flex-wrap: wrap;
+  padding: 0;
+}
+@media screen and (max-width:800px) {
+  padding: 0.5rem
+}
 
   .item {
     width: 30vw;
     height: 30vw;
+    margin: 0 auto;
     cursor: pointer;
+    @media screen and (max-width:800px) {
+      width:45vw;
+      height:45vw;
+    }
+    @media screen and (max-width:400px) {
+      width:100vw;
+      height:100vw;
+    }
     img {
       width: 100%;
       height: 100%;
