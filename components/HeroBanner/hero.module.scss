@@ -1,14 +1,13 @@
 .HeroBanner {
   background: url(../../public/assets/hero-bg.webp) no-repeat;
   background-size: cover;
-  background-position:center;
-  position: relative;
+  background-position: center;
   display: flex;
   justify-content: center;
   align-items: center;
+  width: 100vw;
   height: 80vh;
   line-height: 0.9;
-  width: 100%;
   h1 {
     color: white;
     font-size: 3em;
@@ -16,8 +15,10 @@
     text-transform: uppercase;
     letter-spacing: 0.2rem;
 
-    @media screen and (max-width: 800px) {
-      font-size: 50px;
+    @media screen and (max-width: 400px) {
+      font-size: 4em;
+      white-space: wrap;
+      text-align: center;
     }
   }
   @media screen and (max-width: 800px) {

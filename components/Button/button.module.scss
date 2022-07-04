@@ -24,6 +24,10 @@
     padding: 1em;
     font-size: 0.7em;
   }
+  @media screen and (max-width: 400px) {
+    padding: 0.8em;
+    font-size: 0.7em;
+  }
 
   span {
     font-size: 0.8rem;
