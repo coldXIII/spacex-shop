@@ -12,10 +12,10 @@ const ProductDetails = ({ product, products }) => {
   const { image, sizeChart } = product;
   const [showTable, setShowTable] = useState(false);
   const [lightBox, setLightBox] = useState(false);
+  
   const toggleTable = () => {
     setShowTable(!showTable);
   };
-  console.log(lightBox);
 
   return (
     <>

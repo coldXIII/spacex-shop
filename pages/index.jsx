@@ -3,7 +3,7 @@ import { client } from '../lib/client';
 import { Product, FooterBanner, HeroBanner } from '../components';
 import Button from '../components/Button/Button';
 
-const Home = ({ products, footerBannerData }) => {
+const Home = ({ products}) => {
   const mainProducts = new Array(products[0],products[3])
 
   return (
@@ -13,7 +13,7 @@ const Home = ({ products, footerBannerData }) => {
         <h2>Featured Products</h2>
       </div>
       <div className="products-container">
-        {mainProducts.map((product,index) => (
+        {mainProducts.map((product) => (
           <Product key={product._id} product={product} />
         ))}
       </div>
@@ -21,7 +21,7 @@ const Home = ({ products, footerBannerData }) => {
         <Button title={'view all featured'} />
       </div>
       <FooterBanner
-        footerBanner={footerBannerData.length && footerBannerData}
+        footerBanner={products.length && products}
       />
     </>
   );
@@ -31,12 +31,8 @@ export const getServerSideProps = async () => {
   const query = "*[_type == 'product']";
   const products = await client.fetch(query);
 
-
-  const footerBannerQuery = "*[_type == 'footerbanner']";
-  const footerBannerData = await client.fetch(footerBannerQuery);
-
   return {
-    props: { products, footerBannerData },
+    props: { products },
   };
 };
 

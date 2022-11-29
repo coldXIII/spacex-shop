@@ -1,11 +1,12 @@
 import React from 'react';
 import FooterCard from './FooterCard/FooterCard';
-import styles from './footerbanner.module.scss'
+import styles from './footerbanner.module.scss';
 
 const FooterBanner = ({ footerBanner }) => {
+  const productsData = footerBanner.slice(0, 3);
   return (
     <div className={styles.FooterBanner}>
-      {footerBanner.map((item) => (
+      {productsData.map((item) => (
         <FooterCard data={item} key={item._id} />
       ))}
     </div>
