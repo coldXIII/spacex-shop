@@ -1,13 +1,13 @@
 import React from 'react';
 import Link from 'next/link';
-import {Cart} from '..';
+import { Cart } from '..';
 import Navmenu from '../NavMenu/Navmenu';
 import MobileMenu from '../MobileMenu/MobileMenu';
 import { useState } from 'react';
 import { menuItems } from '../../lib/MenuItems';
 import { FaTimes, FaBars } from 'react-icons/fa';
 import { useStateContext } from '../../context/StateContext';
-import styles from './navbar.module.scss'
+import styles from './navbar.module.scss';
 
 const Navbar = () => {
   const [mobileMenu, setMobileMenu] = useState(false);
@@ -32,15 +32,7 @@ const Navbar = () => {
       </div>
 
       <div className={styles.rightside}>
-        <ul>
-          <li>account</li>
-          <li>search</li>
-        </ul>
-
-        <button
-          className={styles.icon}
-          onClick={() => setShowCart(true)}
-        >
+        <button className={styles.icon} onClick={() => setShowCart(true)}>
           <span className={styles.cart__quantity}>
             CART&nbsp;({totalQuantities})
           </span>

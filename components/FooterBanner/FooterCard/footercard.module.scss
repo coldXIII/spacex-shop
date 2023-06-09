@@ -3,9 +3,9 @@
   width: 40%;
   margin: 0 1rem;
   background: transparent;
-  @media screen and (max-width:600px) {
- width: 100%;
- margin-bottom: 2rem;
+  @media screen and (max-width: 600px) {
+    width: 100%;
+    margin-bottom: 2rem;
   }
 
   p {
@@ -15,14 +15,14 @@
     transform: translate(-25%, -70%);
     color: #fff;
     text-shadow: 0 0 5px #000;
-    font-size: 2.2rem;
+    font-size: 2rem;
     font-weight: 600;
     text-transform: uppercase;
-    @media screen and (max-width:850px) {
+    @media screen and (max-width: 850px) {
       font-size: 1.8rem;
       top: 70%;
     }
-    @media screen and (max-width:600px) {
+    @media screen and (max-width: 600px) {
       top: 60%;
     }
   }
@@ -35,7 +35,6 @@
       bottom: 0;
       left: 50%;
       transform: translate(-50%, 0);
-
     }
   }
   .image {

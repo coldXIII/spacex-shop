@@ -12,9 +12,9 @@ const ProductDetails = ({ product, products }) => {
   const { image, sizeChart } = product;
   const [showTable, setShowTable] = useState(false);
   const [lightBox, setLightBox] = useState(false);
-  
+
   const toggleTable = () => {
-    setShowTable(!showTable);
+    setShowTable((prev) => !prev);
   };
 
   return (
@@ -23,7 +23,11 @@ const ProductDetails = ({ product, products }) => {
         <div>
           <SlugSlider image={image} setLightBox={setLightBox} />
           {lightBox && (
-            <LightBox lightBox={lightBox} image={image} onClose={() => setLightBox(false)} />
+            <LightBox
+              lightBox={lightBox}
+              image={image}
+              onClose={() => setLightBox(false)}
+            />
           )}
           {sizeChart && (
             <div className={styles.table}>

@@ -32,17 +32,26 @@
 
   .rightside {
     display: flex;
+    align-items: center;
+    flex: 1;
 
     ul {
       display: flex;
+      align-items: center;
       color: #aaa;
       @media screen and (max-width: 990px) {
         display: none;
       }
-      li:hover {
-        color: #fff;
-       
+      li{
+        text-align: center;
+        &.name{
+          color: #63bbee;
+        }
+        &:hover {
+          color: #fff;
+        }
       }
+   
     }
     .icon {
       font-size: 1rem;
@@ -58,7 +67,7 @@
       font-size: 1rem;
     }
   }
- .menuicon {
+  .menuicon {
     margin-left: 0.5rem;
     font-size: 1.5rem;
     display: none;
