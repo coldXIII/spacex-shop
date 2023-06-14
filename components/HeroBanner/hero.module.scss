@@ -12,6 +12,7 @@
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 0.2rem;
+    text-shadow: 5px 5px 10px #fff, -5px -5px 10px #fff;
 
     @media screen and (max-width: 400px) {
       font-size: 4em;

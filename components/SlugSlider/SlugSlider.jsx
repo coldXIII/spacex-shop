@@ -6,7 +6,7 @@ import styles from './slugslider.module.scss';
 import 'swiper/css';
 import 'swiper/css/pagination';
 
-const SlugSlider = ({ image, setLightBox, lightBox }) => {
+const SlugSlider = ({ image, setLightBox }) => {
  
   return (
     <>

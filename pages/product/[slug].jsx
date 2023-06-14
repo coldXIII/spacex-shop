@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { client } from '../../lib/client';
 import styles from './slug.module.scss';
 import SlugSlider from '../../components/SlugSlider/SlugSlider';
@@ -7,15 +7,36 @@ import SlugDescription from '../../components/SlugDescription/SlugDescription';
 import { AiOutlineMinus, AiOutlinePlus } from 'react-icons/ai';
 import MayLike from '../../components/MayLike/MayLike';
 import LightBox from '../../components/LightBox/LightBox';
+import { useSession } from 'next-auth/react';
+import { useRouter } from 'next/router';
+import { v4 as uuidv4 } from 'uuid';
 
 const ProductDetails = ({ product, products }) => {
+  const router = useRouter();
+  const { data: session } = useSession();
   const { image, sizeChart } = product;
   const [showTable, setShowTable] = useState(false);
   const [lightBox, setLightBox] = useState(false);
+  const { slug } = router.query;
 
   const toggleTable = () => {
     setShowTable((prev) => !prev);
   };
+
+  const postViewed = async () => {
+     await client.create({
+      _type: 'viewed',
+      user: session?.user?.email,
+      id:uuidv4(),
+      product: product.name,
+      slug:product.slug,
+      image: image[0],
+    });
+  };
+
+  useEffect(() => {
+    postViewed();
+  }, [slug]);
 
   return (
     <>
