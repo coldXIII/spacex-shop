@@ -21,7 +21,7 @@ const Navbar = () => {
   };
 
   return (
-    <div className={styles.Navbar}>
+    <nav className={styles.Navbar}>
       <p className={styles.logo}>
         <Link href="/">
           <img
@@ -60,7 +60,7 @@ const Navbar = () => {
       </div>
       {mobileMenu && <MobileMenu data={menuItems} />}
       {showCart && <Cart />}
-    </div>
+    </nav>
   );
 };
 

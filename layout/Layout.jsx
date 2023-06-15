@@ -12,9 +12,7 @@ const Layout = ({ children }) => {
         <link rel="manifest" href="/manifest.json" />
       </Head>
       <header className={styles.header}>
-        <nav>
           <Navbar />
-        </nav>
       </header>
       <main className={styles.main}>{children}</main>
       <footer>

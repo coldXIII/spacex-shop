@@ -1,5 +1,6 @@
 .Layout{
   width: 100%;
+  min-height: 100vh;
 }
 
 .header {
@@ -12,6 +13,6 @@
 
 .main {
   position: relative;
-  top: 13vh;
+  top: 10vh;
   width: 100%;
 }
